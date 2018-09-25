@@ -1,0 +1,35 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+  {% for blogPost in blogPosts %}
+      <div class="blog-post">
+        <h2><a href="{{ 'postDetail/' | url }}{{ blogPost.id }}">{{ blogPost.title }}<a></h2>
+        Jan1, 2020 by <a href="">Alex</a>
+        {% if blogPost.img_url %}
+        <div class="blog-post-image">
+          <img src="{{ blogPost.img_url }}" alt="">
+        </div>
+      {% endif %}
+        <div class="blog-post-content">
+          <p>{{blogPost.content}}</p>
+        </div>
+      </div>
+  {% endfor %}
+  {% if links.prev != null %}
+    <a href="{{'' | url}}{{links.prev}}">Previous</a>
+  {% endif %}
+  {% if countersLow != null %}
+    {% for counterLow in countersLow %}
+      <a href="{{'' | url}}{{counterLow}}">{{counterLow}}</a>
+    {% endfor %}
+  {% endif %}
+  {{number}}
+  {% if countersHigh != null %}
+    {% for counterHigh in countersHigh %}
+      <a href="{{'' | url}}{{counterHigh}}">{{counterHigh}}</a>
+    {% endfor %}
+  {% endif %}
+  {% if links.next != null %}
+    <a href="{{'' | url}}{{links.next}}">Next</a>
+  {% endif %}
+{% endblock %}

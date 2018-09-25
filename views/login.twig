@@ -1,0 +1,27 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <h2>Login</h2>
+    <a href="{{''| url }}">Home</a>
+    {% if errors %}
+      {% include ('partials/errors.twig') %}
+    {% endif %}
+    <form method="post">
+      <div class="form-group">
+
+        <label for="email">Email</label>
+        <input type="text" name="email" id="inputEmail" class="form-control">
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control">
+
+      </div>
+      <div class="form-group">
+
+
+      <input type="submit" value="Login" class="btn btn-primary" >
+      </div>
+    </form>
+{% endblock %}

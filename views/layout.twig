@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blog with platzi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@3.1.1/dist/sweetalert2.css">
+    <link rel="stylesheet" href="css/blog.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Blog Title</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          Sidebar
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed semper augue, quis rhoncus mauris. Nunc sit amet aliquam sapien, eget ultrices ligula.
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <footer>
+            this is a footer <br>
+            <a href="{{'admin' | url }}" >Admin Panel</a>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@3.1.1/dist/sweetalert2.min.js"></script>
+    {% block js %}{% endblock %}
+  </body>
+</html>
